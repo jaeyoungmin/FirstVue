@@ -5,8 +5,8 @@
       <!--v-bind을 치면 javascript와 연동이되어 아래 지정된 변수를 가져온다.
         'message'로 넣게되면 문자열로 들어가 변수가 아니게 된다.
       -->
-      내 위에 잠시 마우스를 올리면 <span>동적</span>으로 바인딩 된 Title을 볼 수
-      있습니다.
+      내 위에 잠시 마우스를 올리면
+      <span>동적</span>으로 바인딩 된 Title을 볼 수 있습니다.
     </p>
     <p v-if="seen">이제 나를 볼 수 있어요</p>
     <!--v-if : 조건문 -->
@@ -21,22 +21,26 @@
     <input v-model="message" />
     <!--v-model은 form에서 사용할 수 있는 -->
     <HelloWorld></HelloWorld>
+    <Event :pageH1="eventH1"></Event>
+    <Event :pageH1="'이건 H2'"></Event>
   </div>
 </template>
 
 <script>
 //@ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
+import Event from "@/views/Event.vue";
 export default {
   name: "Home",
-  components: { HelloWorld },
+  components: { HelloWorld, Event },
   data() {
     return {
+      eventH1: "이건 eventH1",
       message: "안녕하세요! Vue.js!",
       msg: "이 페이지는" + new Date() + "에 로드 되었습니다.",
       seen: true,
       todos: [
-        { text: "JavaScript 배우기" },
+        { text: "JavaScript" },
         { text: "Vue 배우기" },
         { text: "무언가 멋진 것을 만들기" },
         { text: "Vue.js" }
