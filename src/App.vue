@@ -1,56 +1,37 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-main>
-      <HelloWorld />
-    </v-main>
+    <router-view></router-view>
+    <!--HOME 파일-->
   </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
-
 export default {
   name: "App",
-
-  components: {
-    HelloWorld
-  },
-
+  components: {},
   data: () => ({
     //
   })
 };
 </script>
+<style lang="scss">
+/*h2, h1, p 등 텍스트 태그에 대한 css 는 먼저 정의해주는것이 좋다*/
+h2 {
+  font-weight: 700;
+  font-size: 3rem;
+  text-align: center;
+}
+p {
+  font-weight: 300;
+  font-size: 1.25rem;
+  color: rgba(0, 0, 0, 0.87);
+  .divider {
+    margin: 0 auto 40px;
+    width: 56px;
+    height: 5px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    opacity: 0.5;
+  }
+}
+</style>
