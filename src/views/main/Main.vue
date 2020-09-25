@@ -4,6 +4,7 @@
     <about-me></about-me>
     <features></features>
     <parallax></parallax>
+    <blog></blog>
   </div>
 </template>
 
@@ -16,7 +17,8 @@ export default {
     MainBanner: () => import("@/components/main/MainBanner.vue"),
     AboutMe: () => import("@/components/main/AbuotMe.vue"),
     Features: () => import("@/components/main/Features.vue"),
-    Parallax: () => import("@/components/main/Parallax.vue")
+    Parallax: () => import("@/components/main/Parallax.vue"),
+    Blog: () => import("@/components/main/Blog.vue")
   },
   data() {
     return {};
