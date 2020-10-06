@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+
+<body>
+    <script>
+        /*function asyncThing(callback) {
+            //비동기를 표현하기 위해 setTimeout 함수를 실행
+            window.setTimeout(function () {
+                callback()
+            }, 3000); //3초후에 실행 
+        }
+        asyncThing(() => console.log('To it !!!!!!!!!!!!!!'))*/
+        function _promise(param) {
+            return new Promise((resolve, reject) => {
+                window.setTimeout(function () {
+                    if (param) {
+                        resolve('해결 완료!')
+                    } else {
+                        reject(Error('실패!!!!!!!'))
+                    } //resolve promise에서 성공해서 객체를 반환 이 함수를끝내겟다
+                }, 3000) //비동기 시행문 
+            })
+        }
+        _promise(false).then(data => { //true 일때 reslove ! false 일때 reject
+            console.log(data)
+        }).catch(err => {
+            console.log(err)
+        })
+
+        /*
+        function _promise(){
+            return new Promise((resolve)=>{
+                실행문
+
+            }, 시간)
+        }
+        _promise.then(data => {
+            console.log(data)
+        })
+        */
+    </script>
+</body>
+
+</html>

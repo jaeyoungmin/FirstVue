@@ -5,6 +5,8 @@
     <features></features>
     <parallax></parallax>
     <blog></blog>
+    <vuex></vuex>
+    <form-input></form-input>
   </div>
 </template>
 
@@ -12,18 +14,20 @@
 // @ is an alias to /src
 
 export default {
-  name: "Main",
+  name: 'Main',
   components: {
-    MainBanner: () => import("@/components/main/MainBanner.vue"),
-    AboutMe: () => import("@/components/main/AbuotMe.vue"),
-    Features: () => import("@/components/main/Features.vue"),
-    Parallax: () => import("@/components/main/Parallax.vue"),
-    Blog: () => import("@/components/main/Blog.vue")
+    MainBanner: () => import('@/components/main/MainBanner.vue'),
+    AboutMe: () => import('@/components/main/AbuotMe.vue'),
+    Features: () => import('@/components/main/Features.vue'),
+    Parallax: () => import('@/components/main/Parallax.vue'),
+    Blog: () => import('@/components/main/Blog.vue'),
+    Vuex: () => import('@/components/main/Vuex.vue'),
+    FormInput: () => import('@/components/main/FormInput.vue'),
   },
   data() {
     return {};
   },
-  methods: {}
+  methods: {},
 };
 </script>
 <style lang="scss" scoped>
