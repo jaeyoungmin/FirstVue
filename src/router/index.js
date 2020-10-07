@@ -7,25 +7,19 @@ import Home from "../views/Home.vue"; //Home 어차피 불러와야하기때문�
 Vue.use(VueRouter);
 
 const routes = [{
-    path: "/",
-    name: "Home",
-    component: Home,
-    children: [{
-      //두번째로 나오는 router-view에 뿌림
-      path: "/",
-      component: () => import("../views/main/Main.vue"),
-    }] // path에 따라 동적으로 움직임
-  },
-  {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import( /* webpackChunkName: "about" */ "../views/About.vue") //그때 그떄 가져오게 import는 여기서 해주는게 좋다
-  }
-];
+  path: "/",
+  name: "Home",
+  component: Home,
+  children: [{ //home 안에 자식
+      path: '/',
+      component: () => import('../views/main/Main.vue'),
+    },
+    { //home 안에 자식
+      path: 'gallery',
+      component: () => import('../views/Gallery.vue'),
+    },
+  ]
+}, ];
 
 const router = new VueRouter({
   routes
