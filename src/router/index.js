@@ -18,6 +18,10 @@ const routes = [{
       path: 'gallery',
       component: () => import('../views/Gallery.vue'),
     },
+    { //home 안에 자식
+      path: 'menu',
+      component: () => import('../views/Menu.vue'),
+    },
   ]
 }, ];
 

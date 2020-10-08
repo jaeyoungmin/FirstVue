@@ -10,6 +10,7 @@
         <v-toolbar-title>VUETIFY</v-toolbar-title>
         <router-link to="/" class="menu">Home</router-link>
         <router-link to="/gallery" class="menu">Gallery</router-link>
+        <router-link to="/menu" class="menu">Menu</router-link>
         <v-spacer></v-spacer>
         <!--중간에 간격을 두기 위해 사용 VUETIFY 기능-->
         <v-btn>Sign in</v-btn>

@@ -34,7 +34,7 @@ export default new Vuex.Store({
       },
       {
         title: "Ex예제입니다",
-        url: "https://lh3.googleusercontent.com/proxy/q9oXaPa11jmFkOgmIyOIk-vcReZq1z4qDTDCq-pHzgQnmOX4Fb2hhXw2NkY7CgHFQ2QpPLhpCwzZn3i5CwonZLL8wC8BKx3aUVHayhbaH-thGZ-fD8zRFBrPcpzbXQ",
+        url: "https://lh3.googleusercontent.com/proxy/D3Ss1GY8YIpdTQlbME66KquhP9ztqqgbomUm6uYhiKDWlOuGS9n_IQdadNC3FR1jzCW9uuzPsMV9SDz3zaJiaPHjrbckDRtiIHcQgJLhmqxqHADYf0ucaRxd7xTuAA",
         text: "한효주입니다."
       }
     ],
@@ -210,7 +210,8 @@ export default new Vuex.Store({
         }
       ],
       message: "Successfully! All records has been fetched."
-    }
+    },
+    images: []
   },
   mutations: {
     addBlog(state, payload) {
@@ -221,8 +222,13 @@ export default new Vuex.Store({
     },
     addContact(state, payload) {
       state.body.push(payload);
+    },
+    setImage(state, payload) {
+      console.log('success')
+      state.images = payload
     }
   }, //mutations 을 걸쳐서 데이터를 입력해야한다.
   actions: {},
   modules: {}
+
 });
