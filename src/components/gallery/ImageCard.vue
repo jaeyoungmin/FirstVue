@@ -3,10 +3,16 @@
     <v-fade-transition>
       <div v-if="isMouseOver" class="cover">
         <v-row justify="center" align="center" style="height:100%">
-          <div class="content-wrapper">
-            <v-avatar>
-              <v-icon dark large>mdi-link</v-icon>
+          <div class="content-wrapper" :class="{'on-hover ' : hover}">
+                     <v-hover v-slot:default="{ hover }">
+            <v-avatar color="#fff" :class="{ 'on-hover': hover }">
+              <!-- hover 애니메이션이 복잡할 땐 v-hover 태그 내에서 토글되는 클래스를 효율적으로 사용 -->
+              <v-icon>
+                mdi-link
+              </v-icon>
             </v-avatar>
+          </v-hover>
+
             <h4>{{ text }}</h4>
           </div>
         </v-row>
@@ -82,6 +88,13 @@ export default {
   height: 100%;
   z-index: 1;
   opacity: 0.8;
+}
+.v-avatar {
+  transition: all 0.5s;
+}
+
+.v-avatar:not(.on-hover) {
+  opacity: 0.4;
 }
 
 .fade-enter-active,
